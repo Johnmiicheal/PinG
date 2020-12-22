@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinG</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/imagges/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/site.webmanifest">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h2>Welcome to PinG...<span id="blinking-cursor">_</span></h2>
+        <h4><em>Communication has never been easier</em></h4>
+    </div>
+
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+
+    <div id="ping-ping">
+        <input type="text" id="callings"></input>
+        <input type="button" onclick="call()" value="call"></input>
+        <input type="button" onclick="answerer()" value="Generate Call ID"></input>
+        <audio controls></audio>
+        <div id="peerid"></div>
+    </div>
+
+
+    <script>
+        //The Blinking Cursor effect
+        var cursor = true;
+        var speed = 500;
+
+        setInterval(() => {
+            if (cursor) {
+                document.getElementById('blinking-cursor').style.opacity = 0;
+                cursor = false;
+            } else {
+                document.getElementById('blinking-cursor').style.opacity = 1;
+                cursor = true;
+            }
+        }, speed);
+        
+    </script>
+
+    <script src="/static/js/ping.js"></script>
+
+</body>
+
+</html>
